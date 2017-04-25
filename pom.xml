@@ -62,14 +62,7 @@
                     <password/>
                     <driver>org.h2.Driver</driver>
                 </configuration>
-                <executions>
-                    <execution>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>migrate</goal>
-                        </goals>
-                    </execution>
-                </executions>
+
             </plugin>
         </plugins>
     </build>

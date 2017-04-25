@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "Order")
+@Table(name = "T_Order")
 public class Order {
 
     @Id
@@ -13,8 +13,12 @@ public class Order {
     private long id;
     private Date orderTime;
     private long userId;
+
     @ElementCollection
-    @Embedded
+    @CollectionTable(
+            name = "ORDER_PETS",
+            joinColumns = @JoinColumn(name = "ORDER_ID")
+    )
     private List<Pet> pets;
 
     public Order() {

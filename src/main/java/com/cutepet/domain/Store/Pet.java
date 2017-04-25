@@ -14,11 +14,19 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private long storeId;
+
     private String name;
+
     private String color;
+
     @Enumerated(EnumType.STRING)
     private PetType type;
+
     @ElementCollection
+    @CollectionTable(
+            name = "PAYMENT_METHOD",
+            joinColumns = @JoinColumn(name = "PET_ID")
+    )
     @Enumerated(EnumType.STRING)
     private List<PaymentMethod> paymentMethods;
 
